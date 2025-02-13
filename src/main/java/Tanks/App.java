@@ -178,11 +178,9 @@ public class App extends PApplet implements TankCallBack {
     public void tankIsHit(String hitObject, int health, Tank realTank) {
         for (int i = 0; i < tanks.size(); i++) {
             Tank hitTank = tanks.get(i);
-            if(realTank.getPlayerLabel().equals(hitTank.getPlayerLabel()))
-            {
-                
-            }
-            else if (hitTank.getPlayerLabel().equals(hitObject)) {
+            if (realTank.getPlayerLabel().equals(hitTank.getPlayerLabel())) {
+
+            } else if (hitTank.getPlayerLabel().equals(hitObject)) {
                 System.out.println("Hit Object : " + hitObject);
                 scoreBoard.update(realTank);
                 if (hitTank.hasActiveShield()) {
@@ -190,12 +188,12 @@ public class App extends PApplet implements TankCallBack {
                 } else {
                     hitTank.setHealth(hitTank.getHealth() - health);
                 }
-                
+
             }
         }
         healthBar = new HealthBar((width - 200) / 2, 20, 200, 20, currentActiveTank.getColor(),
                 currentActiveTank.getColor(), currentActiveTank.getHealth());
-        
+
     }
 
     /**
@@ -289,7 +287,7 @@ public class App extends PApplet implements TankCallBack {
             healthBar = new HealthBar((width - 200) / 2, 20, 200, 20,
                     currentActiveTank.getColor(), currentActiveTank.getColor(), currentActiveTank.getHealth());
         } else {
-            
+
             tankIsHit(hitObject, health, realCurrentActiveTank);
         }
         realCurrentActiveTank.setLargetProjectile(false);
@@ -396,16 +394,11 @@ public class App extends PApplet implements TankCallBack {
             util.buyThings(currentActiveTank, soundManager, "fuel");
         } else if (key == 80) {
             util.buyThings(currentActiveTank, soundManager, "parasuate");
-        }
-        else if(key == 78)
-        {
-            for(int i=0; i < tanks.size() ; i++)
-            {
-                if(tanks.size() == 1)
-                {
+        } else if (key == 78) {
+            for (int i = 0; i < tanks.size(); i++) {
+                if (tanks.size() == 1) {
                     loadNextLevel();
-                }
-                else{
+                } else {
                     tanks.remove(i);
                     currentTurnIndex = currentTurnIndex % tanks.size();
                     break;
@@ -489,7 +482,7 @@ public class App extends PApplet implements TankCallBack {
             util.getWinnerGif(this);
             soundManager.playWinner();
             delay(10000);
-           
+
         }
 
         terrain.renderGraphic(this);
@@ -690,8 +683,7 @@ public class App extends PApplet implements TankCallBack {
         this.soundManager = soundManager;
     }
 
-    public void setTerrain(Terrain terrain)
-    {
+    public void setTerrain(Terrain terrain) {
         this.terrain = terrain;
     }
 

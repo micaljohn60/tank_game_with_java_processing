@@ -28,3 +28,9 @@ Before you can run this project, make sure you have the following installed:
      ```
 
 By following these steps, you should be able to set up your environment to run the project successfully.
+
+
+## Images
+![Tank Terrain 1 sample Image](assets/img_1.png)
+![Tank Terrain 2 sample Image](assets/img_2.png)
+![Tank Terrain 3 sample Image](assets/img_3.png)
